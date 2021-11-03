@@ -7,11 +7,12 @@ import (
 	"math/big"
 	"time"
 
-	ethclient11011 "github.com/ethereum/go-ethereum/ethclient/11011"
+	"github.com/ethereum/go-ethereum/ethclient"
 )
 
 func EthExplorer(rpc, user, pass string, blockStart, blockEnd int) Blockchain {
-	client, err := ethclient11011.Dial(rpc + user + pass)
+	client, err := ethclient.Dial(rpc + user + pass)
+
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -73,7 +74,7 @@ func EthThroughput(blockStart, blockEnd int) float32 {
 
 //TODO do case blocknumber=0
 func EthBlockThroughput(blockNumber int) float32 {
-	client, err := ethclient11011.Dial("https://mainnet.infura.io")
+	client, err := ethclient.Dial("https://mainnet.infura.io")
 	if err != nil {
 		log.Fatal(err)
 	}

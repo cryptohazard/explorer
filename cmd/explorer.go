@@ -28,8 +28,6 @@ func main() {
 	switch *chain {
 	case "eth":
 		BlockExplorer = explorer.EthExplorer
-	case "ftm":
-		BlockExplorer = explorer.FtmExplorer
 	case "btc":
 		BlockExplorer = explorer.BtcExplorer
 	case "qtum":
